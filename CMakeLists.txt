@@ -3,4 +3,9 @@ project(Learning_C__)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Learning_C__ main.cpp)
+add_executable(Learning_C__ main.cpp
+        Program1.cpp
+        Program2.cpp
+        Program3.cpp
+        BankData.cpp
+        BankData.h)
