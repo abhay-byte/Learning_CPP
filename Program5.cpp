@@ -6,11 +6,30 @@ int globalVariable = 0;
 class A
 {
     static const int staticConstantVariable = 1;
-    int localVariable = 2;
 
 public:
+
+    A(A& classA)
+    {
+        cout << "Private Variable of classA through Friend Class:"
+        <<classA.privateVariableA<<endl;
+    }
+
+    A(int a)
+    {
+        privateVariableA = a;
+    }
+
+    A() {}
+
     static const int staticConstantPublicVariable = 1;
     int publicVariableA = 3;
+
+private:
+    int privateVariableA = 2;
+
+protected:
+    int protectedVariableA = 5;
 
     class C
     {
@@ -18,19 +37,9 @@ public:
     public:
         static const int publicVariableCInA = 10;
 
-    private:
-        int privateVariableCInA;
-
-    protected:
-        int protectedVariableCInA;
-
     };
 
-private:
-    int privateVariable = 4;
 
-protected:
-    int protectedVariableA = 5;
 
 };
 
@@ -57,17 +66,27 @@ void B::HelloWorld()
     cout << "HelloWorld!!!" << endl;
 }
 
+void DisplayNameAndEnrollmentNumber()
+{
+    cout << "\nProgram Created By,"<< endl
+         << "Name: Abhay Raj" << endl
+         << "Enrollment Number: 00976803122" << endl;
+}
+
 int main()
 {
-    A classA;
+    A classA1(10);
+
     B classB;
 
-
-
     cout << "Global Variable: "<< globalVariable << endl;
-    cout << "Public Variable of class A accessing through object: "<< classA.publicVariableA << endl;
+    cout << "Public Variable of class A accessing through object: "<< classA1.publicVariableA << endl;
     cout << "Public Variable of class B accessing through object: "<< classB.publicVariableB << endl;
-    cout << "Static Constant Public Variable of class A: "<< A::staticConstantPublicVariable << endl;
+    cout << "Static Variable of class A: "<< A::staticConstantPublicVariable << endl;
     classB.PrintProtectedVariables();
+
+    A classA2(classA1);
+
+    DisplayNameAndEnrollmentNumber();
     return 0;
 }

@@ -6,11 +6,11 @@ using namespace std;
 class Employee
 {
 private:
-    int empNo;
-    int basic;
-    int hra;
-    int da;
-    float netPay;
+    int empNo{};
+    int basic{};
+    int hra{};
+    int da{};
+    float netPay{};
     string eName;
 
     void Calculate()
@@ -61,7 +61,6 @@ int main()
 {
 
     Employee employee;
-
     employee.HaveData();
     employee.DispData();
 

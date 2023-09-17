@@ -1,55 +1,46 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-class TravelDetails {
+class TravelData {
 
 public:
-    TravelDetails(string startingPoint, string destination, int numberOfBusesRequired)
-    {
-        this->startingPoint = startingPoint;
-        this->destination = destination;
-        this->numberOfBusesRequired = numberOfBusesRequired;
-    }
     string startingPoint;
     string destination;
     int numberOfBusesRequired;
 };
 
-class TravelData
+class Travel
 {
 
 public:
 
-    vector <TravelDetails> travelData {
-        TravelDetails("City X", "City Y", 5),
-        TravelDetails("City A", "City B", 4),
-        TravelDetails("City X", "City B", 3),
-        TravelDetails("City Y", "City A", 8),
-        TravelDetails("City C", "City D", 6),
-        TravelDetails("City A", "City D", 2),
-        TravelDetails("City B", "City C", 5),
-    };
+    void Initialise()
+    {
+        EnterStartPoint();
+
+        EnterDestination();
+
+        CalculateBusesRequired();
+    }
 
     void EnterStartPoint()
     {
-        cout << "Enter starting point of you travel:";
+        cout << "Enter starting point of your travel:";
         getline (cin, startingPoint);
     }
 
     void EnterDestination()
     {
-        cout << "Enter destination of you travel:";
+        cout << "Enter destination of your travel:";
         getline (cin, destination);
     }
 
 
     void CalculateBusesRequired()
     {
-        int i = 0;
-        while (i<travelData.size())
+        for (TravelData& data : travelData)
         {
-            TravelDetails currentData = travelData[i];
+            TravelData currentData = data;
 
             bool condition = currentData.startingPoint == startingPoint
                     && currentData.destination == destination;
@@ -59,8 +50,6 @@ public:
                 numberOfBusesRequired = currentData.numberOfBusesRequired;
                 break;
             }
-
-            i++;
         }
 
         ShowNumberOfBusesRequired();
@@ -70,7 +59,8 @@ public:
     {
         if(numberOfBusesRequired != 0)
         {
-            cout << "You are required to take " << numberOfBusesRequired << " buses to reach your destination." << endl;
+            cout << "You are required to take " << numberOfBusesRequired <<
+            " buses to reach your destination." << endl;
         }
         else
         {
@@ -82,16 +72,32 @@ private:
     string startingPoint;
     string destination;
     int numberOfBusesRequired = 0;
+
+    TravelData travelData[7] {
+            TravelData{"City X", "City Y", 5},
+            TravelData{"City A", "City B", 4},
+            TravelData{"City X", "City B", 3},
+            TravelData{"City Y", "City A", 8},
+            TravelData{"City C", "City D", 6},
+            TravelData{"City A", "City D", 2},
+            TravelData{"City B", "City C", 5},
+    };
 };
 
+void DisplayNameAndEnrollmentNumber()
+{
+    cout << "\nProgram Created By,"<< endl
+         << "Name: Abhay Raj" << endl
+         << "Enrollment Number: 00976803122" << endl;
+}
 
 int main()
 {
-    TravelData details;
+    Travel details;
 
-    details.EnterStartPoint();
-    details.EnterDestination();
-    details.CalculateBusesRequired();
+    details.Initialise();
+
+    DisplayNameAndEnrollmentNumber();
 
     return 0;
 }
