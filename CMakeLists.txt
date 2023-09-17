@@ -7,6 +7,7 @@ add_executable(Learning_C__ main.cpp
         Program1.cpp
         Program2.cpp
         Program3.cpp
-        BankData.cpp
-        BankData.h
-        Program4.cpp)
+        Program4.cpp
+        Program5.cpp
+        Program6.cpp
+)

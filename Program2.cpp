@@ -1,59 +1,142 @@
 #include <iostream>
-#include <cstring>
-#include <algorithm>
-#include <vector>
-
+#include <random>
 using namespace std;
 
 
-class Student
-{
-    vector<string> Streams =  {"COMPUTER SCIENCE", "ELECTRONICS",
-                               "MECHANICAL", "ELECTRICAL", "CHEMICAL", "CIVIL", "NO STREAM"};
-    public:
-        Student(int rollNumber, int marks[5], char name[100])
+class BankAccount {
+
+    enum Errors { MINIMUM_BALANCE, INVALID_INPUT};
+
+public:
+    void Initialise() {
+
+        accountHolderName = InputUserName();
+
+        accountType = InputAccountType();
+
+        availableBalance = InputCreditDeposite();
+
+        accountNumber = GenerateAccountNumber();
+
+        accountLastFourDigit = GetAccountLastFourDigit();
+
+    }
+
+    void CreditFunds(float credit) {
+        availableBalance += credit;
+        cout << "Your Account XX" << accountLastFourDigit << " has been credited with INR " << credit << "." << endl;
+    }
+
+    void DebitFunds(float debit) {
+        if (availableBalance - debit >= minimumAccountBalance) {
+            availableBalance -= debit;
+            cout << "Your Account XX" << accountLastFourDigit << " has been debited with INR " << debit << "." << endl;
+        }
+        else {
+            ThrowError(MINIMUM_BALANCE);
+        }
+    }
+
+    void DisplayAccountDetails() {
+        cout << "\nACCOUNT DETAILS," << endl
+         << "Account Number: " << accountNumber << endl
+         << "Account Type: " << accountType << endl
+         << "Available Balance: " << availableBalance << endl
+         << "Account Holder Name: " << accountHolderName << endl
+         << "\n";
+    }
+
+private:
+
+    int accountNumber{};
+    string accountType;
+    float availableBalance{};
+    string accountHolderName;
+
+    int accountLastFourDigit{};
+    const float minimumAccountBalance = 10000;
+
+    string InputUserName()
+    {
+        string firstName;
+        string lastName;
+
+        cout << "Creating Account In ABC Bank:" << endl;
+
+        cout << "Enter Your First Name:" << endl;
+        cin >> firstName;
+        cout << "Enter Your Last Name:" << endl;
+        cin >> lastName;
+
+        return lastName+" "+firstName;
+    }
+
+    string InputAccountType()
+    {
+        string type;
+        cout << "\nEnter which type of account you want to make\n('S' for Saving and 'C' for Current):" << endl;
+        cin >> type;
+        if(type != "S")
+            if(type != "C")
+                ThrowError(INVALID_INPUT);
+
+        return type;
+    }
+
+    float InputCreditDeposite()
+    {
+        float credit;
+        cout << "\nEnter Money to be deposited\n(Minimum Account Balance is " << minimumAccountBalance << "):"<< endl;
+        cin >> credit;
+        if(credit < 10000)
+            ThrowError(MINIMUM_BALANCE);
+
+        return credit;
+    }
+
+    int GenerateAccountNumber()
+    {
+        int randomNumber = rand() % 900000 + 100000;
+        return randomNumber;
+    }
+
+    int GetAccountLastFourDigit() {
+        int lastFourDigit = accountNumber % 10000;
+        return lastFourDigit;
+    }
+
+    void ThrowError(Errors error)
+    {
+        if(error == INVALID_INPUT)
         {
-            this->rollNumber = rollNumber;
-            copy(marks,marks+5,this->marks);
-            strcpy(this->name,name);
+            cout << "Error: Invalid Input.";
+        }
+        if(error == MINIMUM_BALANCE)
+        {
+            cout << "Error: Minimum Balance is less than " << minimumAccountBalance <<".";
         }
 
-        void AssignStreamToStudent()
-        {
-            int totalPercentage = CalculateTotalPercentage();
-            int index = (totalPercentage>96) ? 0 : (totalPercentage>91)? 1: (totalPercentage>86)? 2:
-                    (totalPercentage>81)? 3: (totalPercentage>76)? 4: (totalPercentage> 71)? 5: 6;
-
-            cout<< "You have been assigned with stream " << Streams[index] << "." << endl;
-            cout<< "This Stream assignment is only based on you percentage,"
-                   " if you want to choose the stream of your choice, you totally can. " << endl;
-
-        }
-
-        int CalculateTotalPercentage()
-        {
-            int i = 0,totalMarks = 0;
-
-            while (i<5)
-            {
-                totalMarks += marks[i];
-                i++;
-            }
-            int totalPercentage = totalMarks/5;
-            return  totalPercentage;
-        }
-
-    private:
-        int rollNumber;
-        int marks[5];
-        char name[100];
+    }
 
 };
 
+void DisplayNameAndEnrollmentNumber()
+{
+    cout << "\nProgram Created By,"<< endl
+     << "Name: Abhay Raj" << endl
+     << "Enrollment Number: 00976803122" << endl;
+}
 
 int main()
 {
-    Student student1 =  Student(1,new int[5] {72,78,95,94,94},"ABC");
-    student1.AssignStreamToStudent();
-    return 0;
+    BankAccount accounts[10];
+    for(BankAccount& account : accounts)
+    {
+        account.Initialise();
+        account.DisplayAccountDetails();
+    }
+
+    DisplayNameAndEnrollmentNumber();
+
+    return  0 ;
 }
