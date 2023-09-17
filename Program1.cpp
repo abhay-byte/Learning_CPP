@@ -65,9 +65,9 @@ private:
 
 void DisplayNameAndEnrollmentNumber()
 {
-    cout << "\nProgram Created By,"<< endl;
-    cout << "Name: Abhay Raj" << endl;
-    cout << "Enrollment Number: 00976803122" << endl;
+    cout << "\nProgram Created By,"<< endl
+         << "Name: Abhay Raj" << endl
+         << "Enrollment Number: 00976803122" << endl;
 }
 
 int main()

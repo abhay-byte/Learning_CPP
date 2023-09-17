@@ -3,16 +3,6 @@
 
 using namespace std;
 
-class EmployeeData
-{
-public:
-    int empNo;
-    int basic;
-    float netPay;
-    char eName[100];
-};
-
-
 class Employee
 {
 private:
@@ -21,7 +11,7 @@ private:
     int hra;
     int da;
     float netPay;
-    char eName[100];
+    string eName;
 
     void Calculate()
     {
@@ -31,18 +21,26 @@ private:
 
 public:
 
-    void HaveData(EmployeeData data)
+    void HaveData()
     {
-        this->empNo = data.empNo;
-        this->basic = data.basic;
-        strcpy(this->eName, data.eName);
-        this->netPay = data.netPay;
+        cout << "Enter Employee Name:" << endl;
+        getline(cin,eName);
+
+        cout << "Enter Employee Number:" << endl;
+        cin >> empNo;
+
+        cout << "Enter Employee Basic:" << endl;
+        cin >> basic;
+
+        cout << "Enter Employee Net Pay:" << endl;
+        cin >> netPay;
 
         Calculate();
     }
 
     void DispData()
     {
+        cout<< "\nEMPLOYEE DETAILS," <<endl;
         cout<<"Employee Number: "<< empNo <<endl;
         cout<<"Employee Name: "<< eName <<endl;
         cout<<"Employee Basic: "<< basic <<endl;
@@ -52,13 +50,22 @@ public:
     }
 };
 
+void DisplayNameAndEnrollmentNumber()
+{
+    cout << "\nProgram Created By,"<< endl
+         << "Name: Abhay Raj" << endl
+         << "Enrollment Number: 00976803122" << endl;
+}
+
 int main()
 {
-    EmployeeData employeeData1 = {123,10000,20000,"ABCD"};
-    Employee employee1;
 
-    employee1.HaveData(employeeData1);
-    employee1.DispData();
+    Employee employee;
+
+    employee.HaveData();
+    employee.DispData();
+
+    DisplayNameAndEnrollmentNumber();
 
     return 0;
 
