@@ -37,7 +37,7 @@ public:
 
         while(row<Matrix.rows)
         {
-            cout << "[";
+            cout << "\n[";
             while (column<Matrix.columns) {
                 cout<<Matrix.matrix[row][column]<<",";
                 column++;
