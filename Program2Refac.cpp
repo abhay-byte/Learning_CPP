@@ -3,10 +3,10 @@ using namespace std;
 class BankAccount {
 public:
     void Initialise() {
-        cout << "Enter Your Name:"; cin >> accName;
-        cout << "Enter Acc. Type (S,C):"; cin >> accT;
-        cout << "Enter Money:"; cin >> avBal;
-        cout << "Enter Acc. No.:"; cin >> accNo;}
+        cout << "Enter,\nYour Name:"; cin >> accName;
+        cout << "Acc. Type (S,C):"; cin >> accT;
+        cout << "Money:"; cin >> avBal;
+        cout << "Acc. No.:"; cin >> accNo;}
     void Deposite(float c) { avBal += c; }
     void Withdraw(float d) {
         if (avBal - d >= 10000)
