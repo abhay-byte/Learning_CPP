@@ -1,5 +1,7 @@
 # GTBIT Object-Oriented Programming Using C++ Practical
 
+No of Programs Completed = 3
+
 ## Introduction
 
 This repository contains programs that have been assigned as practical assignments. ProgramX includes clean code, while ProgramRefacX consists of shortened code. If you plan to write the program in your practical file, I suggest using ProgramRefacX.
