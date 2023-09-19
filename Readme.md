@@ -17,6 +17,3 @@ You can use either Clion or Visual Studio for an easy installation of C++ IDEs.
 - Clion: [Download here](https://www.jetbrains.com/clion/)
 - Visual Studio Community 2022: [Download here](https://visualstudio.microsoft.com/)
 
-## My Thoughts
-
-I enjoy learning new languages that teach the fundamentals and basics of programming. To achieve that, there is no better language than C/C++. However, I strongly believe that writing these codes on paper in this day and age is both unnecessary and a waste of time.
