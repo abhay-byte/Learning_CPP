@@ -15,7 +15,7 @@ public:
     void Withdraw(float d) {
         if (avBal - d >= 10000){
             avBal -= d;
-            cout<< d << ", Amount Credited";
+            cout<< d << ", Amount Debited";
         }
     }
     void ShowData() {
