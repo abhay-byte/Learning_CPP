@@ -11,8 +11,7 @@ public:
 
     A(A& classA)
     {
-        cout << "Private Variable of classA through Friend Class:"
-        <<classA.privateVariableA<<endl;
+
     }
 
     A(int a)
