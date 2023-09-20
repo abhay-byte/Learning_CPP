@@ -8,10 +8,15 @@ public:
         cout << "Money:"; cin >> avBal;
         cout << "Acc. No.:"; cin >> accNo;
     }
-    void Deposite(float c) { avBal += c; }
+    void Deposite(float c) {
+        avBal += c;
+        cout<< c << ", Amount Credited";
+    }
     void Withdraw(float d) {
-        if (avBal - d >= 10000)
+        if (avBal - d >= 10000){
             avBal -= d;
+            cout<< d << ", Amount Credited";
+        }
     }
     void ShowData() {
         cout << "\nACCOUNT DETAILS,\n"
