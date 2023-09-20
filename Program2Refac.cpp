@@ -10,12 +10,12 @@ public:
     }
     void Deposite(float c) {
         avBal += c;
-        cout<< c << ", Amount Credited";
+        cout<<"\n"<<c<< ", Amount Credited";
     }
     void Withdraw(float d) {
         if (avBal - d >= 10000){
             avBal -= d;
-            cout<< d << ", Amount Debited";
+            cout<<"\n"<< d << ", Amount Debited";
         }
     }
     void ShowData() {
