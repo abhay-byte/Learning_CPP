@@ -19,8 +19,8 @@ You can use either Clion or Visual Studio for an easy installation of C++ IDEs.
 
 ## Questions
 
-![RE](/Questions/q1.PNG)
-![RE](/Questions/q2.PNG)
-![RE](/Questions/q3.PNG)
-![RE](/Questions/q4.PNG)
+![RE](/Questions/q1.jpg)
+![RE](/Questions/q2.jpg)
+![RE](/Questions/q3.jpg)
+![RE](/Questions/q4.jpg)
 
