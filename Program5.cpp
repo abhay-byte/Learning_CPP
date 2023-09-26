@@ -3,6 +3,10 @@ using namespace std;
 
 int globalVariable = 0;
 
+namespace D {
+    int nameSpaceVariable = 25;
+}
+
 class A
 {
     static const int staticConstantVariable = 1;
@@ -82,6 +86,7 @@ int main()
     cout << "Public Variable of class A accessing through object: "<< classA1.publicVariableA << endl;
     cout << "Public Variable of class B accessing through object: "<< classB.publicVariableB << endl;
     cout << "Static Variable of class A: "<< A::staticConstantPublicVariable << endl;
+    cout << "Namespace Variable: "<< D::nameSpaceVariable << endl;
     classB.PrintProtectedVariables();
 
     A classA2(classA1);
