@@ -17,3 +17,10 @@ You can use either Clion or Visual Studio for an easy installation of C++ IDEs.
 - Clion: [Download here](https://www.jetbrains.com/clion/)
 - Visual Studio Community 2022: [Download here](https://visualstudio.microsoft.com/)
 
+## Questions
+
+![RE](/Questions/q1.PNG)
+![RE](/Questions/q2.PNG)
+![RE](/Questions/q3.PNG)
+![RE](/Questions/q4.PNG)
+
