@@ -3,7 +3,7 @@ project(Learning_C__)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Learning_C__ main.cpp
+add_executable(
         Program1.cpp
         Program2.cpp
         Program3.cpp
@@ -13,4 +13,11 @@ add_executable(Learning_C__ main.cpp
         Program2Refac.cpp
         Program1Refac.cpp
         Program3Refac.cpp
+        Program4Refac.cpp
+        program5Refac.cpp
+        program5Refac.cpp
+        Program6Refac.cpp
+        Program7.cpp
+        Program8.cpp
+        Program9.cpp
 )
