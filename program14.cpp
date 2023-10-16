@@ -31,4 +31,5 @@ public:
 int main(){
     student s; s.ReadMarks();
     s.Displaydata();
+    cout << "\nAbhay Raj, 00976803122";
 }

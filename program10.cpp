@@ -33,4 +33,5 @@ int main(){
     cout << "Enter no to subtract:\n"; cin >> s;
     d0.subtract(s); d1.subtract(d0);
     d0.display(); d1.display();
+    cout << "\nAbhay Raj, 00976803122";
 }

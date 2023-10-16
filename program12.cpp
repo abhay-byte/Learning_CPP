@@ -29,4 +29,5 @@ int main(){
     s.newSerial(); cout << "Enter Duration and no of episodes:\n";
     cin >> dur >> no; s.otherEnteries(no,dur);
     s.dispData();
+    cout << "\nAbhay Raj, 00976803122";
 }
