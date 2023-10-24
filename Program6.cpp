@@ -19,16 +19,21 @@ public:
 
     void MatrixMultiplication(Matrix& matrix1, Matrix& matrix2, Matrix& result)
     {
+        if(matrix1.columns == matrix2.rows){
+            for (int i = 0; i < matrix1.rows; ++i) {
+                for (int j = 0; j < matrix2.columns; ++j) {
+                    for (int k = 0; k < matrix1.columns; ++k) {
+                        result.matrix[i][j] += matrix1.matrix[i][k] * matrix2.matrix[k][j];
 
-        for (int i = 0; i < matrix1.rows; ++i) {
-            for (int j = 0; j < matrix2.columns; ++j) {
-                for (int k = 0; k < matrix1.columns; ++k) {
-                    result.matrix[i][j] += matrix1.matrix[i][k] * matrix2.matrix[k][j];
-
+                    }
                 }
             }
+            result.rows =matrix1.rows; result.columns =matrix2.rows;
         }
-        result.rows =matrix1.rows; result.columns =matrix2.rows;
+        else{
+            cout<<"Matrix Multiplication Not Possible";
+        }
+
     }
 
     void DisplayMatrix(Matrix Matrix)
@@ -97,5 +102,3 @@ int main()
     DisplayNameAndEnrollmentNumber();
     return 0;
 }
-
-

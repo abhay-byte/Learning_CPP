@@ -20,4 +20,11 @@ add_executable(
         Program7.cpp
         Program8.cpp
         Program9.cpp
+        program10.cpp
+        program11.cpp
+        program12.cpp
+        program13.cpp
+        program14.cpp
+        program15.cpp
+        program16.cpp
 )
