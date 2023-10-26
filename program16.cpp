@@ -26,7 +26,7 @@ int main(){
     cout << "Enter real and imaginary part for two numbers:\n";
     cout << "Enter Real parts:\n"; cin>>r1>>r2;
     cout << "Enter Imaginary parts:\n"; cin>>i1>>i2;
-    Complex a(r1,i1); Complex b(i1,i2);
+    Complex a(r1,i1); Complex b(r2,i2);
     cout << "Addition of these two is:\n";
     a.Add(b); a.disp();
 	cout<<"\nAbhay Raj, 00976803122";
