@@ -3,14 +3,14 @@ using namespace std;
 class student{
 protected:
     int nostds;
-    public:
+public:
     student(int t) : nostds(t) {}
 };
 class exam{
 protected:
-    int noexams;
+    int noex;
 public:
-    exam(int exams) : noexams(exams) {}
+    exam(int exams) : noex(exams) {}
 };
 class result: public student, public exam{
 public:
@@ -24,6 +24,6 @@ int main(){
     int s,e;
     cout<<"Enter no of students and exams:\n";
     cin>>s>>e;
-    result r(s,e); r.dispResult();
+    result r(s,e); r.dispRes();
 	cout<<"\nAbhay Raj, 00976803122";
 }
