@@ -1,6 +1,6 @@
 # GTBIT Object-Oriented Programming Using C++ Practical
 
-No of Programs Completed = upto 19 and 25 to 28
+No of Programs Completed = 40
 
 ## Introduction
 
